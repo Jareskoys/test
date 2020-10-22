@@ -1,5 +1,5 @@
 import re
-
+import re
 def readMass(filename):
     with open(filename) as file:
         file=open(filename)
