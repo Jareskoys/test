@@ -1,1 +1,1 @@
-noread
+noread.py
