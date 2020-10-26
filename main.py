@@ -1,3 +1,4 @@
+#проверка рыботы коммита
 import re
 import re
 def readMass(filename):
