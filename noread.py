@@ -1,3 +1,4 @@
+#проверка рыботы коммита
 import re
 import re
 def readMass(filename):
@@ -25,5 +26,3 @@ def ecxchange(mass, N):
             if i==j:
                 mass[i][j],mass[i][N-1-i]=mass[i][N-1-i],mass[i][j]
     return mass
-
-
