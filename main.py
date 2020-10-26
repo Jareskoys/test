@@ -1,4 +1,4 @@
-#проверка рыботы коммита
+#проверка рыботы коммита еще одна
 import re
 import re
 def readMass(filename):
