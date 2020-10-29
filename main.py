@@ -1,28 +1,37 @@
-#проверка рыботы коммита еще одна
-import re
 import re
 def readMass(filename):
-    with open(filename) as file:
-        file=open(filename)
-        mass=[]
-        N=0
-        for row in file:
-            z=[]
-            rowStr=row.strip('\n')
-            rowStr=re.split(" +", rowStr)
-            print(rowStr)
-            for i in rowStr:
-                z.append(int(i))
-            mass.append(z)
-            N+=1
+    file = open(filename,encoding="utf-8-sig")
+    mass=[]
+    N=0
+    for row in file:
+        z=[]
+        rowStr = row.strip('\n')
+        rowStr = row.strip(' ')
+        rowStr = re.split(' +', rowStr)
+        for i in rowStr:
+            z.append(int(i))
+        mass.append(z)
+        N+=1
     return mass, N
-def printMass(mass,N):
-    for i in range(N):
-        for j in range(N):
-            print("%-4d"% mass[i][j],end='')
-def ecxchange(mass, N):
-    for i in range(N):
-        for j in range(N):
-            if i==j:
-                mass[i][j],mass[i][N-1-i]=mass[i][N-1-i],mass[i][j]
-    return mass
+mass,n=readMass(r'input.txt')
+massofsummm=[]
+i=0
+while i <len(mass):
+    j=0
+    if i ==0:
+        massofsummm=mass[i]
+    else:
+        while j<len(mass[i]):
+            massofsummm[j] += mass[i][j]
+            j+=1
+    i+=1
+i=0
+z=1
+max=massofsummm[0]
+while i <len(massofsummm):
+    print("%-3s"%massofsummm[i], end = " ")
+    if massofsummm[i]>max:
+        max=massofsummm[i]
+        z=i+1
+    i+=1
+print("\n", z)
